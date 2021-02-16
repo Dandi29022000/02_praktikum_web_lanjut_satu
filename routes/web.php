@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-   
+
+/* Praktikum 1  
 Route::get('/', function () {
     echo "Selamat Datang";
 });
@@ -24,3 +25,10 @@ Route::get('/about', function () {
 Route::get('/artikel/{id}', function ($id) {
     echo 'Halaman Artikel ' .$id;
 });
+*/
+
+/* Praktikum 2
+*/
+Route::get('/', [PageController::class, 'index']);
+Route::get('/about', [PageController::class, 'about']);
+Route::get('/articles/{id}', [PageController::class, 'artikel']);
